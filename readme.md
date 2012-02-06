@@ -9,3 +9,7 @@ For example if you create a **site.less** with this build tool, in Visual Studio
 ## Coming Soon
 
 * Coffee Script support
+
+## Known Issues
+
+* Support for `@import`
