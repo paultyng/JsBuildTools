@@ -7,6 +7,7 @@
     <Description xml:space="preserve">Generates compiled CSS from .less files</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>https://github.com/paultyng/JsBuildTools</MoreInfoUrl>
+    <License>license.txt</License>
     <SupportedProducts>
       <VisualStudio Version="10.0">
         <Edition>Ultimate</Edition>

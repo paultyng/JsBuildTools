@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4CF537C8-7399-43AA-AB0C-BDD48F39CAE7}"
 	ProjectSection(SolutionItems) = preProject
 		JsBuildTools.vsmdi = JsBuildTools.vsmdi
+		license.txt = license.txt
 		Local.testsettings = Local.testsettings
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
