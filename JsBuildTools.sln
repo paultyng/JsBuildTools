@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessCss", "LessCss\LessCss.csproj", "{B5754F14-04C2-4AF9-AD77-C12E35F92913}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsBuildTools.Core", "JsBuildTools.Core\JsBuildTools.Core.csproj", "{E6195998-D8CD-4151-80FD-477861C806AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsBuildTools.Tests", "JsBuildTools.Tests\JsBuildTools.Tests.csproj", "{5FA8BE94-B667-4397-8B1D-8C8C342C3672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4CF537C8-7399-43AA-AB0C-BDD48F39CAE7}"
+	ProjectSection(SolutionItems) = preProject
+		JsBuildTools.vsmdi = JsBuildTools.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = JsBuildTools.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5754F14-04C2-4AF9-AD77-C12E35F92913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5754F14-04C2-4AF9-AD77-C12E35F92913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5754F14-04C2-4AF9-AD77-C12E35F92913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5754F14-04C2-4AF9-AD77-C12E35F92913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6195998-D8CD-4151-80FD-477861C806AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6195998-D8CD-4151-80FD-477861C806AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6195998-D8CD-4151-80FD-477861C806AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6195998-D8CD-4151-80FD-477861C806AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA8BE94-B667-4397-8B1D-8C8C342C3672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA8BE94-B667-4397-8B1D-8C8C342C3672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA8BE94-B667-4397-8B1D-8C8C342C3672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA8BE94-B667-4397-8B1D-8C8C342C3672}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
