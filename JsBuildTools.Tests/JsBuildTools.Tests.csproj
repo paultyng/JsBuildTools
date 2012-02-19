@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="IronJS">
-      <HintPath>..\packages\IronJS.Core.0.2.0.1\lib\net40\IronJS.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -75,6 +71,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoffeeScriptWrapperTest.cs" />
     <Compile Include="LessCssWrapperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,9 +80,9 @@
       <Project>{E6195998-D8CD-4151-80FD-477861C806AF}</Project>
       <Name>JsBuildTools.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LessCss\LessCss.csproj">
+    <ProjectReference Include="..\JsBuildTools\JsBuildTools.csproj">
       <Project>{B5754F14-04C2-4AF9-AD77-C12E35F92913}</Project>
-      <Name>LessCss</Name>
+      <Name>JsBuildTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

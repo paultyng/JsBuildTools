@@ -9,16 +9,16 @@ namespace JsBuildTools
 {
     public class LessCssWrapper
     {
-        public string Execute(string css)
+        public string Execute(string source)
         {
             var a = Assembly.GetExecutingAssembly();
             using (var s = a.GetManifestResourceStream("JsBuildTools.less-1.2.1.js"))
             {
-                return Execute(s, css);
+                return Execute(s, source);
             }
         }
 
-        public string Execute(Stream library, string css)
+        public string Execute(Stream library, string source)
         {
             var js = new StringBuilder();
 
@@ -33,15 +33,15 @@ namespace JsBuildTools
             js.AppendLine("var parser = new window.less.Parser, parseOutput, errorOutput;");
             js.AppendLine("parser.parse(toParse, function (err, tree) { errorOutput = err; parseOutput = tree.toCSS(); });");
 
-            var host = new IronJS.Hosting.CSharp.Context();
+            var host = new Jurassic.ScriptEngine();
 
-            host.SetGlobal("toParse", css);
+            host.SetGlobalValue("toParse", source);
 
             host.Execute(js.ToString());
 
-            var error = host.GetGlobalAs<string>("errorOutput");
+            var error = host.GetGlobalValue<string>("errorOutput");
 
-            return host.GetGlobalAs<string>("parseOutput");
+            return host.GetGlobalValue<string>("parseOutput");
         }
     }
 }
