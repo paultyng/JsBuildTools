@@ -42,12 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\IronJS.Core.0.2.0.1\lib\net40\Microsoft.Scripting.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Scripting.Core">
-      <HintPath>..\packages\IronJS.Core.0.2.0.1\lib\net40\Microsoft.Scripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting.ExtensionAttribute">
-      <HintPath>..\packages\IronJS.Core.0.2.0.1\lib\net40\Microsoft.Scripting.ExtensionAttribute.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Shell.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -72,7 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoffeeScriptWrapperTest.cs" />
-    <Compile Include="LessCssWrapperTest.cs" />
+    <Compile Include="Embedded Resource Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +78,24 @@
       <Project>{B5754F14-04C2-4AF9-AD77-C12E35F92913}</Project>
       <Name>JsBuildTools</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="test1.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="test1.less.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="test2.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="test2.less.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="test3.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="test3.less.css" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

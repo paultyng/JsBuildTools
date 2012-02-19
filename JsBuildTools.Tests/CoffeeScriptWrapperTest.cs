@@ -16,7 +16,7 @@ namespace JsBuildTools.Tests
 		{
 			var target = new CoffeeScriptWrapper();
 			string source = "\nnumber = 42\n";
-			string expected = "var number;\n\nnumber = 42;"; // TODO: Initialize to an appropriate value
+			string expected = "var number;\n\nnumber = 42;\n"; // TODO: Initialize to an appropriate value
 			string actual;
 			actual = target.Execute(source);
 			Assert.AreEqual(expected, actual);

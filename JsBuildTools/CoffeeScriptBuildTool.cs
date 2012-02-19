@@ -15,14 +15,14 @@ namespace JsBuildTools
     /// to the project system
     /// </summary>
     [ComVisible(true)]
-    [Guid("61C6B7C8-9FA7-407F-BE57-31BE42A4BC32")]
-    [CodeGeneratorRegistration(typeof(LessCssBuildTool), "LESS CSS Generator", vsContextGuids.vsContextGuidVCSProject, GeneratesDesignTimeSource = true)]
-    [ProvideObject(typeof(LessCssBuildTool))]
-    public class LessCssBuildTool : JsLibraryBuildTool<LessCssWrapper>
+    [Guid("CC600501-4B2A-469D-9833-2C70DACB0244")]
+    [CodeGeneratorRegistration(typeof(CoffeeScriptBuildTool), "Coffee Script Generator", vsContextGuids.vsContextGuidVCSProject, GeneratesDesignTimeSource = true)]
+    [ProvideObject(typeof(CoffeeScriptBuildTool))]
+    public class CoffeeScriptBuildTool : JsLibraryBuildTool<CoffeeScriptWrapper>
     {
         protected override string GetDefaultExtension()
         {
-            return ".less.css";
+            return ".coffee.js";
         }
     }
 }

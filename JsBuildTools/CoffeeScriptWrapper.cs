@@ -4,43 +4,21 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Reflection;
+using Jurassic;
 
 namespace JsBuildTools
 {
-	public class CoffeeScriptWrapper
+    public class CoffeeScriptWrapper : JsLibraryWrapper<CoffeeScriptWrapper>
 	{
-		public string Execute(string source)
-		{
-			var a = Assembly.GetExecutingAssembly();
-			using (var s = a.GetManifestResourceStream("JsBuildTools.coffee-script-1.2.0.js"))
-			{
-				return Execute(s, source);
-			}
-		}
+        public CoffeeScriptWrapper()
+            : base("JsBuildTools.coffee-script-1.2.0.js")
+        {
 
-		public string Execute(Stream library, string source)
-		{
-			var js = new StringBuilder();
+        }
 
-			js.AppendLine("String.prototype.substr = String.prototype.substring;");
-			//js.AppendLine("var window = {}, location = {}, document = {};");
-
-			using (var sw = new StreamReader(library))
-			{
-				js.AppendLine(sw.ReadToEnd());
-			}
-
-			js.AppendLine("var library = window.CoffeeScript, sourceOutput, errorOutput;");
-			js.AppendLine("sourceOutput = library.compile(sourceInput);");
-
-            var host = new Jurassic.ScriptEngine();
-
-            host.SetGlobalValue("sourceInput", source);
-			host.Execute(js.ToString());
-
-			var error = host.GetGlobalValue<string>("errorOutput");
-
-			return host.GetGlobalValue<string>("sourceOutput");
-		}
+        protected override void PostExecuteLibrary(ScriptEngine engine)
+        {
+            engine.Execute("var " + ProcessFunctionName + " = function(src) { return CoffeeScript.compile(src, { bare: true }); };");
+        }
 	}
 }

@@ -7,41 +7,21 @@ using System.IO;
 
 namespace JsBuildTools
 {
-    public class LessCssWrapper
+    public class LessCssWrapper : JsLibraryWrapper<LessCssWrapper>
     {
-        public string Execute(string source)
+        public LessCssWrapper() : base("JsBuildTools.less-1.2.2.js")
         {
-            var a = Assembly.GetExecutingAssembly();
-            using (var s = a.GetManifestResourceStream("JsBuildTools.less-1.2.1.js"))
-            {
-                return Execute(s, source);
-            }
+
         }
 
-        public string Execute(Stream library, string source)
+        protected override void PreExecuteLibrary(Jurassic.ScriptEngine engine)
         {
-            var js = new StringBuilder();
+            engine.Execute("var window = {}, location = {}, document = {}; location.port = ''; document.getElementsByTagName = function(tagName) { return []; };");            
+        }
 
-            js.AppendLine("String.prototype.substr = String.prototype.substring;");
-            js.AppendLine("var window = {}, location = {}, document = {}; location.port = ''; document.getElementsByTagName = function(tagName) { return []; };");
-   
-            using (var sw = new StreamReader(library))
-            {
-                js.AppendLine(sw.ReadToEnd());
-            }
-
-            js.AppendLine("var parser = new window.less.Parser, parseOutput, errorOutput;");
-            js.AppendLine("parser.parse(toParse, function (err, tree) { errorOutput = err; parseOutput = tree.toCSS(); });");
-
-            var host = new Jurassic.ScriptEngine();
-
-            host.SetGlobalValue("toParse", source);
-
-            host.Execute(js.ToString());
-
-            var error = host.GetGlobalValue<string>("errorOutput");
-
-            return host.GetGlobalValue<string>("parseOutput");
+        protected override void PostExecuteLibrary(Jurassic.ScriptEngine engine)
+        {
+            engine.Execute("var " + ProcessFunctionName + " = function(src) { var parseOutput, errorOutput, parser = new window.less.Parser; parser.parse(src, function(err, tree) { errorOutput = err; parseOutput = tree.toCSS(); }); return parseOutput; };");
         }
     }
 }
